@@ -6,7 +6,6 @@ public class DragAndDrop : MonoBehaviour
     private Vector2 originalPosition;
     private static bool isMousePressed = false; // Variável estática para o estado do mouse
     public bool isOriginal = true; // Identifica se o objeto é o original
-    public bool isMouseRelease = true; // Identifica se o objeto é o original
 
     void Start()
     {
@@ -16,7 +15,6 @@ public class DragAndDrop : MonoBehaviour
 
     void OnMouseDown()
     {
-        isMouseRelease = false;
         // Apenas o objeto original pode criar um clone
         if (isOriginal)
         {
@@ -40,7 +38,6 @@ public class DragAndDrop : MonoBehaviour
         // Para o arraste ao soltar o botão do mouse
         isMousePressed = false; // Define o mouse como liberado
         isDragging = false;
-        isMouseRelease = true;
     }
 
     void Update()

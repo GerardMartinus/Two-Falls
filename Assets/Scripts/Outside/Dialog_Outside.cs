@@ -16,6 +16,8 @@ public class DialogueManager : MonoBehaviour
     private bool isTyping = false; // Indica se o texto está sendo digitado.
     private SceneTransitionManager transitionManager; // Referência para gerenciar transição.
     private AudioSource audioSource;
+    private bool jaTocouAudio = false;
+
 
     private void Start()
     {
@@ -31,23 +33,28 @@ public class DialogueManager : MonoBehaviour
         {
             if (isTyping)
             {
-                // Completa o texto instantaneamente se está digitando.
                 StopAllCoroutines();
                 dialogueText.text = dialogueLines[currentLine];
                 isTyping = false;
-                ShowPrompt(); // Mostra o aviso para avançar.
+                ShowPrompt();
             }
             else
             {
-                NextDialogue(); // Avança para a próxima linha.
+                NextDialogue();
             }
         }
 
-        if (currentLine == 1)
+        // Verifica a cena atual e a linha atual
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        if (!jaTocouAudio &&
+            ((sceneName == "Outside Final" && currentLine == 2) ||
+            (sceneName == "Outside" && currentLine == 7)))
         {
-        if (audioSource != null)
+            if (audioSource != null)
             {
-            audioSource.Play();
+                audioSource.Play();
+                jaTocouAudio = true; // Garante que só toca uma vez
             }
             else
             {
@@ -55,6 +62,7 @@ public class DialogueManager : MonoBehaviour
             }
         }
     }
+
 
     private IEnumerator TypeDialogue()
     {

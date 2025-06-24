@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Two Falls.sln"
+    "dotnet.defaultSolution": "Two-Falls.sln"
 }

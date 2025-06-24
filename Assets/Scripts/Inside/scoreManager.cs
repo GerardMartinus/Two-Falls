@@ -4,11 +4,15 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance { get; private set; }
 
+    public TrashCan disperdicio;
+
     public int clientesSatisfeitos = 0;
     public int pedidosEntregues = 0;
     public int ingredientesDesperdicados = 0;
 
     private int melhorScoreEstacao = 0;
+
+
 
     private void Awake()
     {
@@ -23,6 +27,11 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        ingredientesDesperdicados = disperdicio.contagemDisperdicio;
+    }
+ 
     public void RegistrarClienteSatisfeito()
     {
         clientesSatisfeitos++;

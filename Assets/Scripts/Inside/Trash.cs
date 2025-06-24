@@ -2,21 +2,24 @@ using UnityEngine;
 
 public class TrashCan : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    public int contagemDisperdicio;
+    void OnTriggerEnter(Collider other)
     {
         // Verifica se o objeto é arrastável (opcional: pode verificar por tag, camada ou componente)
-        if (collision.CompareTag("Tomate") ||
-            collision.CompareTag("Queijo") ||
-            collision.CompareTag("Cebola") ||
-            collision.CompareTag("Alface") ||
-            collision.CompareTag("Pao") ||
-            collision.CompareTag("Batata") ||
-            collision.CompareTag("Hamburguer") ||
-            collision.CompareTag("Hamburguer_Frito") ||
-            collision.CompareTag("Batata_Frito"))
+        if (other.CompareTag("Tomate") ||
+            other.CompareTag("Queijo") ||
+            other.CompareTag("Cebola") ||
+            other.CompareTag("Alface") ||
+            other.CompareTag("Pao") ||
+            other.CompareTag("Batata") ||
+            other.CompareTag("Hamburguer") ||
+            other.CompareTag("Hamburguer_Frito") ||
+            other.CompareTag("Batata_Frita"))
         {
-        // Destroi o objeto ao entrar na lixeira
-        Destroy(collision.gameObject);
+            // Destroi o objeto ao entrar na lixeira
+            Destroy(other.gameObject);
+
+            contagemDisperdicio += 1;
         }
     }
 }

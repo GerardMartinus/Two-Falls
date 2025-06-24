@@ -568,7 +568,7 @@ MonoBehaviour:
   m_text: "Muito Obrigado por Jogar Two Falls!\n\nJogo desenvolvido por Power Wave
     Studios\n\nGame Desiger | Programador\nBRUNO MARTINS DE MORAES SILVA\n\nSound
     Designer\r\nJO\xC3O VITOR DOS SANTOS\n\nProgramador\r\nJHONATAN EVARISTO DE SOUZA\r\n\nRoteirista\nLAYON
-    PEREIRA LIMA\r\n\nArtista | Programador\nWILLIAN MASSOA NISHIMURA\r\n"
+    PEREIRA LIMA\r\n\nArtista | Programador\nWILLIAN MASSAO NISHIMURA\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 60997348ee5b29b419dd42e3754ad3e3, type: 2}
   m_sharedMaterial: {fileID: -3759301678434026360, guid: 60997348ee5b29b419dd42e3754ad3e3, type: 2}
@@ -662,7 +662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1778281064
 RectTransform:
   m_ObjectHideFlags: 0
