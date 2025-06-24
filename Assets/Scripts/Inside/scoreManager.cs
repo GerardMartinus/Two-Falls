@@ -80,7 +80,7 @@ public class ScoreManager : MonoBehaviour
     {
         clientesSatisfeitos = 0;
         pedidosEntregues = 0;
-        ingredientesDesperdicados = 0;
+        disperdicio.contagemDisperdicio = 0;
     }
 
     public void ResetarMelhorScore()
